@@ -1,5 +1,6 @@
 # はじめに
-Python 3系を使用します．
+Python 3系を使用します．  
+インストールに関しては[Python環境構築ガイド](https://www.python.jp/install/install.html)が参考になります．
 
 # 出力とコメント
 `print()` で出力， `#` で一行コメントアウトを行います．  
