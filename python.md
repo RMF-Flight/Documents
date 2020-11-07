@@ -393,7 +393,7 @@ print(y)            # [2, 6, 10]
 ```
 
 #### `enumerate`
-詳しい説明は避けますが，`enumerate` はカウンタとそれに対応する，引数として渡されたイテラブルなオブジェクトの値を持ちます．
+`enumerate` はカウンタとそれに対応する，引数として渡されたイテラブルなオブジェクトの値を持ちます．
 ```python
 name = ['Alice', 'Bob', 'Chris']
 
@@ -640,3 +640,12 @@ print(np.linalg.inv(a))
 # 行列式
 print(np.linalg.det(a))     # -2.0000000000000004
 ```
+
+# 参考
+- [Python 公式ドキュメント](https://docs.python.org/ja/3/)
+- [Python Japan](https://www.python.jp/index.html)
+- [非公式Pythonダウンロードリンク](https://pythonlinks.python.jp/ja/index.html)
+- [Pythonの組み込みデータ型の分類表（ミュータブル等）](https://gammasoft.jp/blog/python-built-in-types/#iterable)
+- [とほほのPython入門](http://www.tohoho-web.com/python/index.html)
+- [【Python】オブジェクト指向を理解するための超重要ワードまとめ](https://djangobrothers.com/blogs/basic_knowledge_of_python/)
+- [Pythonによる制御工学入門](https://www.ohmsha.co.jp/book/9784274223907/)
