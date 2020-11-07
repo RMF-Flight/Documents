@@ -497,3 +497,146 @@ print(r.y)          # 10
 print(r.add())      # 13
 print(r.sub())      # -7
 ```
+
+# モジュール
+モジュールは関数やクラスなどを1つのファイルにまとめたものです．`import` で読み込むことができます．
+```python
+import モジュール名
+```
+
+## math
+mathは，数学関数を提供します．
+```python
+import math
+
+# 円周率
+print(math.pi)              # 3.141592653589793
+
+# ネイピア数
+print(math.e)               # 2.718281828459045
+
+# 切り上げ
+print(math.ceil(5.6))       # 6
+
+# 切り下げ
+print(math.floor(5.6))      # 5
+
+# 階乗
+print(math.factorial(4))    # 24
+
+# 最大公約数
+print(math.gcd(12, 16))     # 4
+
+# 平方根
+print(math.sqrt(4))         # 2.0
+
+# 三角関数
+p = math.pi
+print(math.sin(p/6))        # 0.49999999999999994
+print(math.cos(p/3))        # 0.5000000000000001
+print(math.tan(p/4))        # 0.9999999999999999
+
+# 逆三角関数
+print(math.asin(0.5))       # 0.5235987755982989
+print(math.acos(0.5))       # 1.0471975511965979
+print(math.atan(1))         # 0.7853981633974483
+```
+
+mathモジュールに限らず，以下のように記述すると，モジュール名を付けずに関数などを利用することができます．
+```python
+from math import sqrt
+
+print(sqrt(3))              # 31.7320508075688772
+```
+```python
+from math import *
+
+print(sqrt(5))              # 2.23606797749979
+print(floor(5.6))           # 5
+```
+
+## Numpy
+Numpy は数値計算を効率的に行うためのモジュールです．
+```python
+import numpy as np
+
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[2, 4], [1, 3]])
+c = np.array([2, 4])
+d = np.array([[2], [4]])
+
+print(a)
+# array([[1, 2],
+#        [3, 4]])
+
+print(c)
+# array([2, 4])
+
+print(d)
+# array([[2],
+#        [4]])
+
+print(type(a))      # <class 'numpy.ndarray'>
+
+
+''' 四則演算 '''
+# 要素ごとに演算が行われます．
+
+print(a+b)
+# array([[3, 6],
+#        [4, 7]])
+
+print(a*b)
+# array([[ 2,  8],
+#        [ 3, 12]])
+
+
+''' 自動補完（ブロードキャスト） '''
+# 要素が足りない場合，自動で計算できる形に補完されます．
+
+print(a-c)
+# array([[-1, -2],
+#        [ 1,  0]])
+
+print(a/d)
+# array([[0.5 , 1.  ],
+#        [0.75, 1.  ]])
+
+print(a*3)
+# array([[ 3,  6],
+#        [ 9, 12]])
+
+
+''' 行列の積 '''
+
+print(np.dot(a, b))
+# array([[ 4, 10],
+#        [10, 24]])
+
+
+''' 配列の作成とサイズ変更 '''
+
+x = np.arange(2, 14, 2)
+
+print(x)        # array([ 2,  4,  6,  8, 10, 12])
+
+print(x.reshape(2, 3))
+# array([[ 2,  4,  6],
+#        [ 8, 10, 12]])
+
+
+''' 転置・逆行列・行列式 '''
+
+# 転置
+print(a.T)
+# array([[1, 3],
+#        [2, 4]])
+
+# 逆行列
+print(np.linalg.inv(a))
+# array([[-2. ,  1. ],
+#        [ 1.5, -0.5]])
+
+# 行列式
+print(np.linalg.det(a))     # -2.0000000000000004
+```
