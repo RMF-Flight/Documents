@@ -4,7 +4,7 @@
 > なお、64GB以上のマイクロSDカードを使う場合は、OSを書き込む前に、Eraseを使ってFAT32でフォーマットし直す必要があります。(OSの一覧の下の方にEraseがあります。)ラズパイがexFATでフォーマットされたマイクロSDカードからの起動に対応していないためです。
 
 # SSHの準備（無線環境）
-microSDのルートディレクトリに"ssh"という空ファイル（拡張子不要）を作る。同様に、ルートディレクトリに"wpa_supplicant.conf"というファイルを作り、こちらには以下を記述する。
+microSDのルートディレクトリに"ssh"という空ファイル（拡張子不要）を作る。同様に、ルートディレクトリに"wpa_supplicant.conf"というファイルを作り、こちらには以下を記述する。（ラズパイ3B+、4などでは IEEE 802.11.b/g/n/ac が使える。Zero W などでは IEEE 802.11.b/g/n のみ。）
 
 ```wpa_supplicant.conf
 country=JP
@@ -41,6 +41,7 @@ sudo apt upgrade
 
 # 各種インターフェースの有効化
 再起動した後はSSHが切れるので、もう一度SSHをつなげる。
+
 ## カメラ
 `sudo raspi-config` を入力する。
 
@@ -81,3 +82,6 @@ test_string = 'test 1 2 3\n'.encode()
 ser.write(test_string)
 print('serial0 is working' if ser.readline() == test_string else 'error')
 ```
+
+# OpenCV のインストール
+[【Raspberry Pi】Raspberry Pi 4のRaspberry Pi OSにOpenCV環境を構築する](https://rikoubou.hatenablog.com/entry/2020/06/11/144846) を参考にインストールする。
